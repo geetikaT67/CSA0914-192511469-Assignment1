@@ -1,0 +1,9 @@
+﻿=== Task 06: Inheritance and Constructor Trace Demo ===
+
+Creating an ElectricCar instance: new ElectricCar("TN09EV9999", 60)
+  [1] Vehicle constructor executing. regNo initialized to: TN09EV9999
+  [2] Car constructor executing. Capacity set to: 5
+  [3] ElectricCar constructor executing. Battery: 60 kWh
+
+Constructor Execution Trace Complete.
+Vehicle Details: TN09EV9999, Hourly Rate: Rs 30.0, Charging Fee for 10 kWh: Rs 120.0

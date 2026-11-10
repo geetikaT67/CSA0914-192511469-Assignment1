@@ -1,0 +1,15 @@
+﻿=== Task 10: Packages, Access Modifiers, and Autoboxing Demo ===
+
+Bike parked at: Floor 0-Slot 0 [TN09BIKE1]
+Car parked at: Floor 0-Slot 1 [TN09CAR2]
+Available slots remaining: 2
+
+--- Autoboxing and Wrapper Comparison Pitfall Demo ---
+id1 = 100, id2 = 100 (Cached range):
+  id1 == id2: true [True due to JVM -128..127 Integer cache]
+id3 = 1000, id4 = 1000 (Outside cached range):
+  id3 == id4: false [CRITICAL BUG: False because == compares heap reference address!]
+  id3.equals(id4): true [CORRECT: .equals() compares value]
+
+--- Wrapper Unboxing NullPointerException Risk ---
+CAUGHT EXPECTED NPE: Auto-unboxing a null wrapper throws NullPointerException!

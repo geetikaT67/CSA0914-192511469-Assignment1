@@ -1,0 +1,44 @@
+﻿===============================================================
+        CAMPUS SMART-PARKING SYSTEM - TASK 11 TEST SUITE        
+===============================================================
+
+--- 1. Testing Normal Operation (Different Types & Pass Categories) ---
+[PARKED] TwoWheeler [TN09AA1001, Type: VISITOR] allocated to Floor 0, Slot 0. Ticket #1001 [TwoWheeler [TN09AA1001, Type: VISITOR] at F0-S0, Entry: 600 min, Status: ACTIVE]
+[PARKED] Car [TN09BB2002, Type: VISITOR] allocated to Floor 0, Slot 1. Ticket #1002 [Car [TN09BB2002, Type: VISITOR] at F0-S1, Entry: 615 min, Status: ACTIVE]
+[PARKED] ElectricCar [TN09CC3003, Type: VISITOR] allocated to Floor 1, Slot 0. Ticket #1003 [ElectricCar [TN09CC3003, Type: VISITOR] at F1-S0, Entry: 630 min, Status: ACTIVE]
+[PARKED] Car [TN09DD4004, Type: STUDENT_PASS] allocated to Floor 1, Slot 1. Ticket #1004 [Car [TN09DD4004, Type: STUDENT_PASS] at F1-S1, Entry: 540 min, Status: ACTIVE]
+[PASS] All 4 normal vehicles parked successfully in free slots.
+
+--- 2. Testing Boundary Cases ---
+[FULL] No free slot available for TN09ZZ9999.
+[PASS] Boundary Case: Facility Full handled correctly (allocation returned null).
+[EXIT] TN09BB2002 exited from Floor 0, Slot 1. Duration: 120 mins. Parking Fee: Rs 60.00, Charging Fee: Rs 0.00 | Total Paid: Rs 60.00
+[PASS] Boundary Case: Exact slab boundary (120 mins = 2 hrs @ Rs 30/hr -> Rs 60.00).
+[PARKED] TwoWheeler [TN09EE5005, Type: VISITOR] allocated to Floor 0, Slot 1. Ticket #1005 [TwoWheeler [TN09EE5005, Type: VISITOR] at F0-S1, Entry: 660 min, Status: ACTIVE]
+[EXIT] TN09EE5005 exited from Floor 0, Slot 1. Duration: 0 mins. Parking Fee: Rs 0.00, Charging Fee: Rs 0.00 | Total Paid: Rs 0.00
+[PASS] Boundary Case: Zero-minute parking correctly charged Rs 0.00.
+[EXIT] TN09AA1001 exited from Floor 0, Slot 0. Duration: 105 mins. Parking Fee: Rs 20.00, Charging Fee: Rs 0.00 | Total Paid: Rs 20.00
+[PASS] Boundary Case: 105 minutes charged as 2 full hours (Rs 20.00).
+[EXIT] TN09DD4004 exited from Floor 1, Slot 1. Duration: 240 mins. Parking Fee: Rs 0.00, Charging Fee: Rs 0.00 | Total Paid: Rs 0.00
+[PASS] Pass Holder: Student pass holder parked free (Rs 0.00).
+[EXIT] TN09CC3003 exited from Floor 1, Slot 0. Duration: 30 mins. Parking Fee: Rs 30.00, Charging Fee: Rs 180.00 | Total Paid: Rs 210.00
+[PASS] EV Operation: 30 mins stay + 15 kWh charging charged correctly (Rs 210.00).
+
+--- 3. Testing Invalid & Error Cases ---
+[PARKED] Car [TN09DUP111, Type: VISITOR] allocated to Floor 0, Slot 0. Ticket #1006 [Car [TN09DUP111, Type: VISITOR] at F0-S0, Entry: 800 min, Status: ACTIVE]
+[REJECTED] Duplicate entry: Vehicle TN09DUP111 is already inside the facility.
+[PASS] Invalid Case: Duplicate vehicle registration rejected successfully.
+[ERROR] Invalid or inactive ticket ID: 9999
+[PASS] Invalid Case: Non-existent ticket ID handled safely (returned -1.0).
+[ERROR] Exit time (700) cannot be earlier than entry time (800).
+[PASS] Invalid Case: Exit time earlier than entry time rejected.
+[EXIT] TN09DUP111 exited from Floor 0, Slot 0. Duration: 60 mins. Parking Fee: Rs 30.00, Charging Fee: Rs 0.00 | Total Paid: Rs 30.00
+
+--- 4. Hand-Calculated Revenue Verification ---
+Expected Hand-Calculated Revenue: Rs 320.0
+Actual System Daily Revenue:    Rs 320.0
+[PASS] Hand-calculated daily revenue strictly matches system output (Rs 320.00)!
+
+===============================================================
+TEST RESULTS SUMMARY: 11 PASSED, 0 FAILED
+===============================================================

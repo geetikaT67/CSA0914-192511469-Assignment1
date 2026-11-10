@@ -1,0 +1,16 @@
+﻿=== Task 05: Static Members and Object Life Cycle Demo ===
+
+[STATIC BLOCK] Initialized SIMATS Smart-Parking Campus Center
+Facility Name from Static Method: SIMATS Smart-Parking Campus Center
+Ticket 1: Ticket #1 (TN01A1111)
+Ticket 2: Ticket #2 (TN02B2222)
+Ticket 3: Ticket #3 (TN03C3333)
+Total Tickets Issued (Static Counter): 3
+
+--- Object Passing (Pass-by-value of Reference) ---
+Before modifyReference, t1 = Ticket #1 (TN01A1111)
+After modifyReference, t1 = Ticket #1 (TN01A1111) (Caller reference unchanged)
+
+--- Object Lifecycle & Garbage Collection Eligibility ---
+Dereferencing t3 (t3 = null)...
+Dereferenced object is now eligible for GC reclaim on heap.

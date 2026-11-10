@@ -1,0 +1,14 @@
+﻿=== Task 02: Data Representation and Precision Demonstration ===
+
+Vehicle Number: TN09AB1234
+Duration: 75 minutes
+
+--- Demonstrating Integer Division Pitfall ---
+Naive Integer Division hours (duration / 60): 1 hr -> Fee: Rs 30.0 [BUG: Underbilled]
+Correct Integer Ceiling ((duration + 59) / 60): 2 hrs -> Fee: Rs 60.0 [CORRECT]
+
+--- Multi-Level Jagged Array Demonstration ---
+Floor 0 initialized with 4 slots.
+Floor 1 initialized with 6 slots.
+Floor 2 initialized with 3 slots.
+Assigned TN09AB1234 to facilitySlots[1][4] = TN09AB1234

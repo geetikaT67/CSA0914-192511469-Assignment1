@@ -1,0 +1,8 @@
+﻿=== Task 04: Constructors and Object Creation Demonstration ===
+
+1. Primary Parameterized Constructor: Ticket #1001 [TN01A1000, Floor: 0, Slot: 1, Entry: 540 min, Pass: STUDENT_PASS]
+2. Chained Overloaded Constructor (Visitor): Ticket #1002 [TN02B2000, Floor: 1, Slot: 2, Entry: 600 min, Pass: VISITOR]
+3. Chained Constructor (Defaulted Time): Ticket #1003 [TN03C3000, Floor: 2, Slot: 0, Entry: 0 min, Pass: VISITOR]
+4. Re-issued Duplicate Ticket (Copy Constructor): Ticket #1001 [TN01A1000, Floor: 0, Slot: 1, Entry: 540 min, Pass: STUDENT_PASS]
+Is distinct object in memory (t1 != t1Duplicate)? true
+Do they hold equal ticket ID? true

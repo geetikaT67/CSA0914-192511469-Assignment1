@@ -1,0 +1,8 @@
+﻿=== Task 09: Abstraction and Interface Features Demo ===
+
+EV Registration: TN09EV1234
+Standard EV Charging (15 kWh): Rs 180.0
+Fast EV Charging Default Method (15 kWh): Rs 225.0
+Is 50 kWh valid? (Static interface method): true
+Processing digital campus wallet payment of Rs 390.0
+RECEIPT: Parking + Fast Charging | Total Paid: Rs 390.0

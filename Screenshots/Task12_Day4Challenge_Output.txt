@@ -1,0 +1,33 @@
+﻿==================================================================
+     TASK 12: DAY-4 DESIGN CHALLENGE - ADAPTED SYSTEM TEST SUITE   
+==================================================================
+
+--- 1. Validating 5-Floor Facility with Jagged Slot Allocation ---
+[PASS] 5 Floors successfully initialized with custom slot counts per floor.
+
+--- 2. Validating E-Bike Flat Fee Requirement ---
+[PARKED] EBike [TN09EB001, Category: VISITOR_HOURLY] -> Floor 0, Slot 0 (Ticket #5001 [EBike [TN09EB001, Category: VISITOR_HOURLY] at Floor 0, Slot 0])
+[EXIT] TN09EB001 freed F0-S0. Parking Fee: Rs 15.00, Charging Fee: Rs 0.00 | Net Exit Payment: Rs 15.00
+[PASS] E-Bike short stay (30 mins) charged exact flat fee: Rs 15.00
+[PARKED] EBike [TN09EB002, Category: VISITOR_HOURLY] -> Floor 0, Slot 0 (Ticket #5002 [EBike [TN09EB002, Category: VISITOR_HOURLY] at Floor 0, Slot 0])
+[EXIT] TN09EB002 freed F0-S0. Parking Fee: Rs 15.00, Charging Fee: Rs 0.00 | Net Exit Payment: Rs 15.00
+[PASS] E-Bike long stay (300 mins / 5 hrs) charged exact flat fee: Rs 15.00
+
+--- 3. Validating Delivery Van Peak Rate (9 AM - 5 PM) Requirement ---
+[PARKED] DeliveryVan [TN09VAN01, Category: VISITOR_HOURLY] -> Floor 0, Slot 0 (Ticket #5003 [DeliveryVan [TN09VAN01, Category: VISITOR_HOURLY] at Floor 0, Slot 0])
+[EXIT] TN09VAN01 freed F0-S0. Parking Fee: Rs 120.00, Charging Fee: Rs 0.00 | Net Exit Payment: Rs 120.00
+[PASS] Delivery Van during peak hours (2 hrs @ Rs 60/hr) correctly charged: Rs 120.00
+[PARKED] DeliveryVan [TN09VAN02, Category: VISITOR_HOURLY] -> Floor 0, Slot 0 (Ticket #5004 [DeliveryVan [TN09VAN02, Category: VISITOR_HOURLY] at Floor 0, Slot 0])
+[EXIT] TN09VAN02 freed F0-S0. Parking Fee: Rs 60.00, Charging Fee: Rs 0.00 | Net Exit Payment: Rs 60.00
+[PASS] Delivery Van outside peak hours (2 hrs @ standard Rs 30/hr) correctly charged: Rs 60.00
+
+--- 4. Validating Visitor One-Day Pass Requirement ---
+[DAY PASS PURCHASED] Vehicle TN09PASS99 bought a One-Day Pass for Rs 80.0
+[PARKED] Car [TN09PASS99, Category: VISITOR_HOURLY] -> Floor 0, Slot 0 (Ticket #5005 [Car [TN09PASS99, Category: VISITOR_HOURLY] at Floor 0, Slot 0])
+[EXIT] TN09PASS99 freed F0-S0. Parking Fee: Rs 0.00, Charging Fee: Rs 0.00 | Net Exit Payment: Rs 0.00
+[PASS] One-Day Pass holder parked for 8 hours with Rs 0 exit fee (Pass prepaid Rs 80.00).
+
+==================================================================
+TASK 12 TEST RESULTS: 6 PASSED, 0 FAILED
+Total Revenue Collected in Task 12: Rs 290.0
+==================================================================

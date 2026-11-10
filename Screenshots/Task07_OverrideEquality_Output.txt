@@ -1,0 +1,13 @@
+﻿=== Task 07: Method Overriding and Equality Demo ===
+
+v1: Car [Plate: TN09XY1234]
+v2: Car [Plate: TN09XY1234]
+v3: TwoWheeler [Plate: TN09XY1234]
+
+--- Testing Equality (equals) and Hash Code ---
+v1 == v2 (Reference identity): false (Distinct heap objects)
+v1.equals(v2) (Domain equality): true [PASS: Equal by registration]
+v1.equals(v3) (Cross-type with same plate): true [Equal by registration]
+v1.hashCode() == v2.hashCode(): true [PASS: Hash contract holds]
+
+HashSet size after adding v1 and v2: 1 [PASS: Deduplicated by equals/hashCode]
